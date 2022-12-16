@@ -1,7 +1,9 @@
 import { getSession, signIn } from "next-auth/react";
 import { useEffect, useState } from "react";
 
-const Dashboard = () => {
+const Dashboard = (props) => {
+
+    console.log('Props of Dashboard: ',props);
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -30,3 +32,4 @@ const Dashboard = () => {
 }
  
 export default Dashboard;
+

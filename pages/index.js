@@ -1,11 +1,15 @@
-import { useSession } from 'next-auth/react'
+import { getSession, useSession } from 'next-auth/react'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
-  const aa = useSession()
-  console.log('aa: ',aa);
+  const {data,status} = useSession()
+  const getSec = getSession()
+
+  console.log('useSession: ',data);
+  console.log('getSession: ',getSec);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -71,4 +75,12 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export function getStaticProps(){
+  return {
+    props:{
+      staticData: 'Hello World'
+    }
+  }
 }
