@@ -7,11 +7,11 @@ import { SessionProvider } from 'next-auth/react'
 // function MyApp({ Component, pageProps:{session,...pageProps} }) {
  function MyApp({ Component, pageProps}) {
 
-  console.log('pageProps@_app.js: ',pageProps);
+  console.log('\n\nPageProps@_app.js: ',pageProps,'\n\n');
 
   return <>
 
-          <SessionProvider session={pageProps}>
+          <SessionProvider session={pageProps.session}>
             <Navbar/>
             <Component {...pageProps} />
           </SessionProvider>

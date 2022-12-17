@@ -33,3 +33,11 @@ const Dashboard = (props) => {
  
 export default Dashboard;
 
+export function getStaticProps(){
+    return{
+        props:{
+            dashBoardProps:"This is DashBoard Props"
+        }
+    }
+}
+
